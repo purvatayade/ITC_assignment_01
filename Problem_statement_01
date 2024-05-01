@@ -1,0 +1,11 @@
+def get_tshirt():
+    available_brands = ["Nike", "Adidas", "Puma", "Reebok"]
+    user_name = get_name()
+    brand_name = input("Enter the brand name you're looking for: ").lower()  # Make brand name search case-insensitive
+
+    if brand_name in available_brands:
+        print(f"Hi {user_name}, the brand '{brand_name}' is available in our store!")
+    else:
+        print(f"Hi {user_name}, unfortunately, we currently don't have '{brand_name}' in stock.")
+
+get_tshirt()
