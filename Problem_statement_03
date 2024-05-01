@@ -12,5 +12,5 @@ def process_orders(orders):
         print(dispatched_order)
 
 
-orders = ["Palak Paneer", "Dhokla", "Biryani"]
+orders = ["misalpav", "vadapav", "sevpuri"]
 process_orders(orders)
