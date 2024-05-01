@@ -1,0 +1,28 @@
+def FGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i):
+    n = (Annual_profit * (Improved_conversion_rate / Current_conversion_rate) - Annual_profit) * ((1 + i) ** Expected_project_life - 1) / i - Improvement_cost * (1 + i) ** Expected_project_life
+    return n
+
+def TGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i):
+    return FGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i) / (1 + i) ** Expected_project_life
+
+def AGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i):
+    return TGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i) / Expected_project_life
+
+def Annual_ROI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i):
+    return AGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i) / Improvement_cost
+
+def Total_ROI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i):
+    return TGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i) / Improvement_cost
+
+Annual_profit = float(input("Annual Site Profit: "))
+Current_conversion_rate = float(input("Current Conversion Rate: "))
+Improved_conversion_rate = float(input("Improved Conversion Rate: "))
+Improvement_cost = float(input("Improvement Cost: "))
+Expected_project_life = int(input("Expected Project Life: "))
+i = 0.05  # discount rate
+
+print("Future Gain Improvement:", FGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i))
+print("Total Gain Improvement:", TGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i))
+print("Annual Gain Improvement:", AGI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i))
+print("Annual ROI:", Annual_ROI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i))
+print("Total ROI:", Total_ROI(Annual_profit, Current_conversion_rate, Improved_conversion_rate, Improvement_cost, Expected_project_life, i))
