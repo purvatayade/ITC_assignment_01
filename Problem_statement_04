@@ -1,0 +1,16 @@
+def add_topping(scoop_size, *toppings):
+    print(f"Adding toppings to {scoop_size} scoop(s) of ice cream:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+def make_shake(choice):
+    if choice == "nuts":
+        print("Making nut shake...")
+    elif choice == "fruit":
+        print("Making fruit shake...")
+    else:
+        print("Invalid choice of shake.")
+
+add_topping(2, 'sprinkles', 'hot fudge', 'whipped cream', 'crushed nuts')
+
+make_shake('nuts')
