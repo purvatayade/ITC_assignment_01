@@ -4,11 +4,11 @@ def get_name():
 def get_tshirt():
     available_brands = ["Nike", "Adidas", "Puma", "Reebok"]
     user_name = get_name()
-    brand_name = input("Enter the brand name you're looking for: ").capitalize()  # Capitalize the input for consistency
+    brand_name = input("Enter the brand name you're looking for: ").capitalize() 
+    tshirt_size = input("Enter the T-shirt size (e.g., XS, S, M, L, XL, XXL): ").upper()
 
     if brand_name in available_brands:
-        print(f"Hi {user_name}, the brand '{brand_name}' is available in our store!")
+        print(f"Hi {user_name}, the brand '{brand_name}' in size '{tshirt_size}' is available in our store")
     else:
         print(f"Hi {user_name}, unfortunately, we currently don't have '{brand_name}' in stock.")
-
 get_tshirt()
