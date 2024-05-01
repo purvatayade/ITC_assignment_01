@@ -1,0 +1,16 @@
+def process_orders(orders):
+    order_stack = []
+    
+    for order in orders:
+        print(f"Preparing Your Order - ({order})")
+        order_stack.append(order)
+    
+    print("The following orders have been dispatched:")
+    
+    while order_stack:
+        dispatched_order = order_stack.pop()
+        print(dispatched_order)
+
+
+orders = ["Palak Paneer", "Dhokla", "Biryani"]
+process_orders(orders)
